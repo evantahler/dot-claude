@@ -15,9 +15,10 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(gh pr *)
 5. Stage all relevant changed files by name (do NOT use `git add -A` or `git add .`)
 6. If `$ARGUMENTS` is provided, use it as the commit message. Otherwise, write a concise commit message based on the diff. Always append the co-author trailer:
 
-   ```
+   ```text
    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
    ```
+
 7. Commit using a HEREDOC:
 
    ```bash
@@ -28,6 +29,7 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(gh pr *)
    EOF
    )"
    ```
+
 8. Push to the current branch with `git push`
 9. If the current branch is not `main`, check if a PR already exists with `gh pr view --json url 2>&1`. If no PR exists, create a draft PR:
 
