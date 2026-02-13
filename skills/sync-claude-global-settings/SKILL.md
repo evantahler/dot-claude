@@ -31,5 +31,5 @@ Sync the `~/.claude` directory (global Claude Code config) with its remote repo.
 8. Write a UTC timestamp to mark the sync time:
 
    ```bash
-   date -u +"%Y-%m-%dT%H:%M:%SZ" > ~/.claude/.last-synced-at
+   date -u +"%Y-%m-%dT%H:%M:%SZ" > ~/.claude/last-synced-at
    ```
