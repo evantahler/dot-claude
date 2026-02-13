@@ -16,6 +16,11 @@ todos/
 
 # Project-level session data (keep CLAUDE.md and memory/)
 projects/*/*.jsonl
+projects/**/tool-results/
+projects/**/sessions-index.json
+
+# Plugin marketplace clones (fetched locally)
+plugins/marketplaces/
 
 # Dependencies (bun install)
 node_modules
