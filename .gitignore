@@ -26,7 +26,7 @@ plugins/marketplaces/
 node_modules
 
 # Ephemeral sync tracking
-.last-synced-at
+last-synced-at
 
 # OS
 .DS_Store
