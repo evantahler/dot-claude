@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: shareable Claude Code config\n\nOpt-in .gitignore that tracks settings, commands, and plugin config\nwhile excluding ephemeral data \\(sessions, caches, telemetry, debug logs\\).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE_PATH=$(cat | jq -r '.tool_input.file_path // empty') && if [[ \"$FILE_PATH\" == *.md ]]; then bun format 2>/dev/null; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

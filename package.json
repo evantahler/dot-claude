@@ -1,0 +1,16 @@
+{
+  "name": "dot-claude",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "format": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\""
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "markdownlint-cli2": "^0.20.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

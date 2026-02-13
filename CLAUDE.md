@@ -1,0 +1,24 @@
+# CLAUDE.md
+
+This is Evan Tahler's global Claude Code configuration. It applies to all projects and repositories. Project-specific instructions live in each project's own `CLAUDE.md`.
+
+## Who You're Working With
+
+- @WHOAMI.md — Background on Evan: contact, career history, open-source projects, and areas of expertise
+
+## How Evan Writes
+
+- @WRITING_STYLE.md — Writing style guide for replicating Evan's voice in LLM-generated content (blog posts, docs, READMEs, etc.)
+
+## How Evan Codes
+
+- @CODING_STYLE.md — Coding conventions and engineering philosophy for writing code the way Evan does
+
+## Global Settings
+
+- `settings.local.json` — Claude Code permission allow-list (granular Bash command permissions for git operations, etc.)
+
+## Commands
+
+- `bun lint` — Check all markdown files for lint errors
+- `bun format` — Auto-fix markdown lint errors
