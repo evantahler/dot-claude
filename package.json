@@ -3,8 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#plans\" \"#plugins/marketplaces\"",
-    "format": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#plans\" \"#plugins/marketplaces\""
+    "lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#plans\" \"#plugins/marketplaces\" \"#cache\"",
+    "format": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#plans\" \"#plugins/marketplaces\" \"#cache\""
   },
   "devDependencies": {
     "@types/bun": "latest",
