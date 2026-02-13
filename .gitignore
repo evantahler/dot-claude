@@ -25,5 +25,8 @@ plugins/marketplaces/
 # Dependencies (bun install)
 node_modules
 
+# Ephemeral sync tracking
+.last-synced-at
+
 # OS
 .DS_Store

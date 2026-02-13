@@ -2,7 +2,7 @@
 name: sync-claude-global-settings
 description: Sync ~/.claude global settings by pulling latest and pushing local changes.
 disable-model-invocation: true
-allowed-tools: Bash(git *)
+allowed-tools: Bash(git *), Bash(date *)
 ---
 
 # Sync Claude Global Settings
@@ -28,3 +28,8 @@ Sync the `~/.claude` directory (global Claude Code config) with its remote repo.
 5. If the rebase has conflicts, report them to the user and stop — do NOT force-resolve.
 6. Run `git -C ~/.claude push` to push any local commits.
 7. Report the result: what was pulled, what was pushed, or that everything was already in sync.
+8. Write a UTC timestamp to mark the sync time:
+
+   ```bash
+   date -u +"%Y-%m-%dT%H:%M:%SZ" > ~/.claude/.last-synced-at
+   ```
