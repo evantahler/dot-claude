@@ -2,13 +2,19 @@
 
 This is Evan Tahler's global Claude Code configuration. It applies to all projects and repositories. Project-specific instructions live in each project's own `CLAUDE.md`.
 
+## Always Loaded
+
+These files are included in every conversation:
+
+- @PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
+
 ## Reference Files
 
-The following files in this directory provide detailed context. Read them when relevant to the task at hand:
+Read these when relevant to the task at hand:
 
-- `WHOAMI.md` — Background on Evan: contact, career history, open-source projects, and areas of expertise. Read this when you need context about who you're working with.
-- `WRITING_STYLE.md` — Writing style guide for replicating Evan's voice. Read this before generating any written content (blog posts, docs, READMEs, etc.).
-- `CODING_STYLE.md` — Coding conventions and engineering philosophy. Read this before writing or reviewing code.
+- `WHOAMI.md` — Background on Evan: contact, career history, open-source projects, and areas of expertise
+- `WRITING_STYLE.md` — Writing style guide for replicating Evan's voice
+- `CODING_STYLE.md` — Coding conventions and engineering philosophy
 
 ## Global Settings
 
