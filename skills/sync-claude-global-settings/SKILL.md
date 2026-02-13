@@ -1,7 +1,7 @@
 ---
 name: sync-claude-global-settings
 description: Sync ~/.claude global settings by pulling latest and pushing local changes.
-disable-model-invocation: true
+disable-model-invocation: false
 allowed-tools: Bash(git *), Bash(date *)
 ---
 
