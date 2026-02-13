@@ -18,6 +18,14 @@ This is Evan Tahler's global Claude Code configuration. It applies to all projec
 
 - `settings.local.json` — Claude Code permission allow-list (granular Bash command permissions for git operations, etc.)
 
+## Setup
+
+To install on a new machine (clones the repo and merges with any existing `~/.claude` data):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/evantahler/dot-claude/main/setup.sh | bash
+```
+
 ## Commands
 
 - `bun lint` — Check all markdown files for lint errors
