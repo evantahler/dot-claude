@@ -5,6 +5,7 @@
 SYNC_FILE="$HOME/.claude/last-synced-at"
 MAX_AGE_SECONDS=86400 # 24 hours
 
+
 if [ ! -f "$SYNC_FILE" ]; then
   echo "Your ~/.claude settings have never been synced. Run /sync-claude-global-settings now before doing anything else."
   exit 0

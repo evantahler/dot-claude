@@ -14,19 +14,21 @@ telemetry/
 todos/
 *.jsonl
 
-# Project-level session data (keep CLAUDE.md and memory/)
-projects/*/*.jsonl
-projects/**/tool-results/
-projects/**/sessions-index.json
+# Project-specific data (per-project CLAUDE.md and memory live in each repo)
+projects/
 
-# Plugin marketplace clones (fetched locally)
-plugins/marketplaces/
+# Plugins (fetched/installed locally)
+plugins/
 
 # Dependencies (bun install)
 node_modules
 
 # Ephemeral sync tracking
 last-synced-at
+
+# Local settings (machine-specific permissions, not shared)
+settings.local.json
+.claude/settings.local.json
 
 # OS
 .DS_Store
