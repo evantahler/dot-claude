@@ -7,9 +7,8 @@ This is Evan Tahler's global Claude Code configuration. It applies to all projec
 These files are included in every conversation:
 
 - @PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
-- @last-synced-at — Timestamp of last `~/.claude` sync (auto-sync trigger)
 
-If `last-synced-at` is missing or older than 24 hours, silently run `/sync-claude-global-settings` before responding to the user's first message.
+Auto-sync of `~/.claude` settings is handled by a `SessionStart` hook (see `scripts/check-sync.sh`). If the hook tells you to sync, run `/sync-claude-global-settings` before doing anything else.
 
 ## Reference Files
 
