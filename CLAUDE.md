@@ -8,8 +8,6 @@ These files are included in every conversation:
 
 - @PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
 
-Auto-sync of `~/.claude` settings is handled by a `SessionStart` hook (see `scripts/check-sync.sh`). If the hook tells you to sync, run `/sync-claude-global-settings` before doing anything else.
-
 ## Reference Files
 
 Read these when relevant to the task at hand:

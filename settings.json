@@ -1,27 +1,3 @@
 {
-  "model": "opus",
-  "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "startup",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/scripts/check-sync.sh",
-            "timeout": 5000
-          }
-        ]
-      },
-      {
-        "matcher": "resume",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/scripts/check-sync.sh",
-            "timeout": 5000
-          }
-        ]
-      }
-    ]
-  }
+  "model": "opus"
 }
