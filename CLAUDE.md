@@ -2,17 +2,13 @@
 
 This is Evan Tahler's global Claude Code configuration. It applies to all projects and repositories. Project-specific instructions live in each project's own `CLAUDE.md`.
 
-## Who You're Working With
+## Reference Files
 
-- @WHOAMI.md — Background on Evan: contact, career history, open-source projects, and areas of expertise
+The following files in this directory provide detailed context. Read them when relevant to the task at hand:
 
-## How Evan Writes
-
-- @WRITING_STYLE.md — Writing style guide for replicating Evan's voice in LLM-generated content (blog posts, docs, READMEs, etc.)
-
-## How Evan Codes
-
-- @CODING_STYLE.md — Coding conventions and engineering philosophy for writing code the way Evan does
+- `WHOAMI.md` — Background on Evan: contact, career history, open-source projects, and areas of expertise. Read this when you need context about who you're working with.
+- `WRITING_STYLE.md` — Writing style guide for replicating Evan's voice. Read this before generating any written content (blog posts, docs, READMEs, etc.).
+- `CODING_STYLE.md` — Coding conventions and engineering philosophy. Read this before writing or reviewing code.
 
 ## Global Settings
 
