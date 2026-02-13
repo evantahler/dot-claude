@@ -3,12 +3,12 @@ name: commit-and-push
 description: Commit all changes and push to the current remote branch.
 disable-model-invocation: true
 argument-hint: "[commit message]"
-allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(gh pr *)
+allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(bun check*), Bash(bun fix*), Bash(bun run lint*), Bash(bun run format*), Bash(bun run check*), Bash(bun run fix*), Bash(bun x *), Bash(npm run lint*), Bash(npm run format*), Bash(npm run check*), Bash(npm run fix*), Bash(pnpm lint*), Bash(pnpm format*), Bash(pnpm check*), Bash(pnpm fix*), Bash(pnpm run lint*), Bash(pnpm run format*), Bash(pnpm run check*), Bash(pnpm run fix*), Bash(yarn lint*), Bash(yarn format*), Bash(yarn check*), Bash(yarn fix*), Bash(yarn run lint*), Bash(yarn run format*), Bash(yarn run check*), Bash(yarn run fix*), Bash(make lint*), Bash(make format*), Bash(make check*), Bash(make fix*), Bash(cd * && make *), Bash(cd * && bun *), Bash(cd * && npm *), Bash(cd * && pnpm *), Bash(cd * && yarn *), Bash(cd * && cargo *), Bash(cd * && go *), Bash(cargo clippy*), Bash(cargo fmt*), Bash(go vet*), Bash(cat package.json*), Bash(cat Makefile*), Bash(cat Cargo.toml*), Bash(gh pr *)
 ---
 
 # Commit and Push
 
-1. Run `bun lint` from the repo root to check formatting on all files. If it fails, run `bun format` to fix, then re-run `bun lint` to confirm.
+1. **Lint check**: Look for lint/check commands in the repo by inspecting project configs (e.g., `package.json` scripts, `Makefile` targets, etc.) at the repo root and in any subdirectories that have changed files. Common commands include `bun run check`, `bun lint`, `pnpm lint`, `npm run lint`, `yarn lint`, `make lint`, `cargo clippy`, `go vet ./...`, etc. Run whatever lint/format checks are available — if it's a monorepo, run checks at the root AND in affected subdirectories (e.g., `cd apps/engine && make lint`). If a check fails with auto-fixable issues, run the corresponding fix command (e.g., `bun run fix`, `bun format`, `make format`), then re-run the check to confirm. If no linter is found, skip this step.
 2. Run `git status` to see what's changed
 3. Run `git diff` and `git diff --staged` to understand the changes
 4. Run `git log --oneline -5` to see recent commit style
