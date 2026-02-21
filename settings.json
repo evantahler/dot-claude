@@ -1,3 +1,5 @@
 {
-  "model": "opus"
+  "model": "opus",
+  "effortLevel": "medium",
+  "skipDangerousModePermissionPrompt": true
 }

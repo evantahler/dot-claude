@@ -43,5 +43,5 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(bun check*)
    )"
    ```
 
-   Use the commit message as the PR title (first line) and expand on the changes in the body.
+   Use the commit message as the PR title (first line) and expand on the changes in the body. If the PR closes a GitHub issue, include `Closes <issue URL>` (e.g., `Closes https://github.com/owner/repo/issues/123`) in the body so GitHub automatically links and closes the issue on merge.
 10. Report the result, including the PR URL if one was created
