@@ -44,4 +44,7 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(bun check*)
    ```
 
    Use the commit message as the PR title (first line) and expand on the changes in the body. If the PR closes a GitHub issue, include `Closes <issue URL>` (e.g., `Closes https://github.com/owner/repo/issues/123`) in the body so GitHub automatically links and closes the issue on merge.
+
+   If a PR already exists, review the current title and description with `gh pr view --json title,body`. If they no longer accurately reflect the full set of changes on the branch (e.g., new commits added since the PR was created), update them with `gh pr edit --title "..." --body "..."`. Use `git log origin/main..HEAD` to understand all changes on the branch.
+
 10. Report the result, including the PR URL if one was created
