@@ -47,4 +47,6 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(bun check*)
 
    If a PR already exists, review the current title and description with `gh pr view --json title,body`. If they no longer accurately reflect the full set of changes on the branch (e.g., new commits added since the PR was created), update them with `gh pr edit --title "..." --body "..."`. Use `git log origin/main..HEAD` to understand all changes on the branch.
 
-10. Report the result, including the PR URL if one was created
+10. **Always update the PR description if anything important changed.** This is not optional — every push should leave the PR description accurate and up-to-date. Even if a PR already existed before this run, re-check the description against the full set of branch changes and update it if the new commit introduces meaningful differences.
+
+11. Report the result, including the PR URL if one was created
