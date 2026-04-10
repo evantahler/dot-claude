@@ -1,10 +1,12 @@
 ---
 name: mcpx
 description: Discover and use MCP tools via the mcpx CLI
-trigger: when the user wants to interact with external services, APIs, or MCP tools
+trigger: when the user wants to interact with external services (Linear, Slack, GitHub, Google, etc.), query APIs, or use MCP tools. Includes questions like "what are my tickets", "send a message", "check my calendar", etc.
 ---
 
 # mcpx — MCP Tool Discovery and Execution
+
+Repository: https://github.com/evantahler/mcpx
 
 You have access to external tools via `mcpx`, a globally-installed CLI ("curl for MCP"). Use it to search for, inspect, and execute MCP tools from any configured server.
 
