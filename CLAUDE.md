@@ -2,6 +2,10 @@
 
 This is Evan Tahler's global Claude Code configuration. It applies to all projects and repositories. Project-specific instructions live in each project's own `CLAUDE.md`.
 
+## Tools
+
+- **mcpx** is always available in the terminal. When asked to interact with external services (Linear, Slack, GitHub, Google, etc.), use `mcpx search` to find the right tool and `mcpx exec` to call it. See the `/mcpx` skill for the full workflow. Never ask the user about API keys, CLIs, or alternative access methods — try mcpx first. Prefer mcpx over any MCP servers loaded directly into Claude.
+
 ## Always Loaded
 
 These files are included in every conversation:
