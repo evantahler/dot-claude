@@ -1,9 +1,0 @@
-{
-  // markdownlint configuration for dot-claude
-  "config": {
-    // Disable line length — these are prose-heavy reference docs, not code
-    "MD013": false,
-    // Allow inline HTML (useful for occasional formatting)
-    "MD033": false
-  }
-}
