@@ -1,17 +1,22 @@
 # Claude Code ephemeral data
+backups/
 cache/
 debug/
 file-history/
 ide/
 paste-cache/
 plans/
+policy-limits.json
+remote-settings.json
 session-env/
+sessions/
 shell-snapshots/
 stats-cache.json
 statsig/
 tasks/
 telemetry/
 todos/
+usage-data/
 *.jsonl
 
 # Project-specific data (per-project CLAUDE.md and memory live in each repo)
