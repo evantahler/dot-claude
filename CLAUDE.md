@@ -31,8 +31,3 @@ To install on a new machine (clones the repo and merges with any existing `~/.cl
 ```bash
 curl -fsSL https://raw.githubusercontent.com/evantahler/dot-claude/main/setup.sh | bash
 ```
-
-## Commands
-
-- `bun lint` — Check all markdown files for lint errors
-- `bun format` — Auto-fix markdown lint errors
