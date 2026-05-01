@@ -6,7 +6,7 @@
 
 ## 1. The voice in one line
 
-**A senior engineer narrating real work to a colleague — confident about the craft, casual about themselves, allergic to abstract thought-leadership.**
+**A practitioner who leads — not a thought leader who occasionally codes — narrating real work to a colleague. An engineer-turned-Head-of-Engineering who builds things, hits real problems, then writes about what he learned. Confident about the craft, casual about themselves, allergic to abstract thought-leadership.**
 
 Reads like someone explaining what they figured out in a Slack channel they trust. Not a keynote. Not a tutorial. A conversation.
 
@@ -292,7 +292,7 @@ That sequence covers 80% of his posts.
 
 Before publishing, ask:
 
-> *"Does this sound like a senior engineer talking shop with a colleague they trust — confident about the craft, casual about themselves, with one good moment of dry humor and zero corporate fog?"*
+> *"Does this sound like a practitioner-who-leads talking shop with a colleague they trust — confident about the craft, casual about themselves, with one good moment of dry humor and zero corporate fog?"*
 
 If yes, ship it.
 
