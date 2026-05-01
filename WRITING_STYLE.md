@@ -12,6 +12,8 @@ Reads like someone explaining what they figured out in a Slack channel they trus
 
 **Self-positioning rule:** companies (TaskRabbit, Voom/Airbus, Grouparoo, Airbyte, Arcade) appear as *grounding for the lesson*, never as a flex. "At Voom, we…" / "Grouparoo was easy to run on…" — the company is the setting where the thing happened, not the credential.
 
+**Be casual about yourself, not about the quality of work you've shipped.** Don't soft-pitch production projects with "my current attempt at…" or "what I'd build if…". For shipped work, lift the project's actual positioning — read its homepage. Self-deprecation belongs on you, not on the artifact.
+
 **Signature sign-offs that actually appear in his posts:**
 
 - "Nerd. Future late-night talk show host."
@@ -80,11 +82,9 @@ Posts end one of three ways — pick whichever fits, never "what are your though
   - **First introduction of a key concept:** "***Repeat Rate***", "**Purpose-built roles**" — bolded the first time the term is named, then plain text after
 
 ### Rhythm tricks
-- **Mix sentence lengths deliberately.** Long explanatory sentence → short punchy one. "That's it." / "Seriously." / "Such is life."
-- **Clipped parallel-fragment payoff.** When you've earned the moment, drop into 3–5 word fragments stacked together:
-  - "Same validation. Same middleware. Same error handling. Five transports, one class."
-  - "Same gateway. Same tools. Same auth. Same audit trail."
-  - "TypeScript won. Bun happened. Zod became the standard."
+- **Mix sentence lengths deliberately.** Long explanatory sentence → short punchy one. But two short fragments aren't always better than one flowing sentence — "Your app wants that data. Now your agent does too." reads stilted; "Your app wants that data and now your agent does too." flows. Use the rhythm break when it earns its keep, not as a default punctuation move.
+- **Clipped parallel-fragment payoff (rare).** Once in a great while, when you've genuinely earned the moment, you can stack 3–5 word fragments for emphasis. This is a once-per-post-at-most flourish, not a default rhythm — overusing it reads as performative.
+- **Stress-test parallel fragments.** Before keeping a "Different X. Different Y. Different Z." flourish, ask: *what is this conveying that the surrounding sentences don't?* If the answer is "it sounds nice," cut it. Parallel fragments are a payoff for an argument you've been building, not decoration.
 - **Colon-then-fragment punch.** "But… it didn't last long." / "And one pattern keeps bugging me."
 
 ### Rhetorical Q&A
@@ -134,6 +134,10 @@ Sample datasets use his own name and his colleagues' names — "Evan: 1, Christi
 - Real GitHub handles, Twitter handles, contributor names: "Thanks to @synthmeat."
 - Reads like someone who actually knows the people they're working with — because they do
 - Cite sources explicitly: Pivotal Labs, Marco Rogers, Susan Koger, the Wikipedia entry, the Stack Overflow thread
+
+**Engage with industry analogies and memes — especially the cringe ones.**
+
+- Readers have already heard them. Ignoring "MCP is USB for agents" makes you sound out of touch; acknowledging and repositioning ("goofy phrase, but basically right") is more honest and lets you make a sharper point.
 
 ---
 
@@ -194,6 +198,9 @@ In hiring/process/leadership posts, include a section that's genuinely self-crit
 | Plain "use" | "utilize" |
 | "bi-directional" | "synergistic" |
 | Concrete numbers ("10 hours", "767 bytes") | Vague magnitudes ("massive", "tremendous") |
+| Concrete date / era ("early on", "in 2019") | "from day one" |
+| Let the next sentence land directly | "That's the thing." (as standalone connective) |
+| Real sample data ("Evan: 1, Christina: 9") | placeholder `[ ... ]` in code samples |
 
 ### Characteristic phrases (use these as connective tissue)
 
