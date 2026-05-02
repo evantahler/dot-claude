@@ -3,7 +3,7 @@ name: biz-summary
 description: Aggregate recent activity across all connected MCP and mcpx services into a prioritized business summary (HIGH/MEDIUM/LOW) for the configured time window. Optionally deliver via Slack or email.
 argument-hint: "[time-range] [notify:none|slack|email]"
 disable-model-invocation: false
-allowed-tools: Bash(mcpx *), Bash(date *), Read, mcp__*
+allowed-tools: Bash(mcpx *), Bash(date *), Read, Write, Agent, mcp__*
 ---
 
 # Biz Summary
@@ -61,37 +61,57 @@ Parse `$ARGUMENTS` into two optional fields. Order does not matter, either can b
    - mcpx: `mcpx info <server> <tool>` first, then `mcpx exec <server> <tool> '<json>'`.
    - Prefer tools that accept a time-window argument. If not, filter client-side using `SINCE`/`UNTIL`.
 
-5. **Execute in parallel.** Fire all discovery calls in a single assistant message — mix native `mcp__*` tool calls and `Bash(mcpx exec ...)` calls freely. Pass identity filters (email, GitHub handle) and the time window with every call. Skip services that have no relevant read/activity tool rather than forcing a fit.
+5. **Execute and persist — NEVER truncate.**
 
-6. **Classify each item** into one of three buckets. Err toward MEDIUM when ambiguous; keep HIGH scarce so it stays meaningful.
+   - Create a temp directory: `TMPDIR=$(mktemp -d /tmp/biz-summary.XXXXXX)`
+   - Fire all discovery calls in parallel using `Bash` with `run_in_background: true` — mix native `mcp__*` tool calls and `Bash(mcpx exec ...)` calls freely.
+   - **Critical**: For each tool call, save the FULL raw JSON response to `$TMPDIR/<service>_<tool>.json`. Use `tee` or redirect to capture complete output without truncation.
+   - If a call fails, still write the error to `$TMPDIR/<service>_<tool>.error` so the sub-agent can report it.
+   - Track which files were created and their corresponding service/tool metadata.
 
+6. **Spawn parsing sub-agents.** For each saved response file, launch a sub-agent to extract structured data:
+
+   - Use `Agent` tool with a focused prompt to parse the JSON file.
+   - Each sub-agent reads its assigned file, extracts relevant items (issues, PRs, messages, events, etc.), and classifies each item into HIGH/MEDIUM/LOW buckets based on the criteria below.
+   - Sub-agent returns structured JSON: `{ "service": "...", "items": [{ "priority": "high|medium|low", "title": "...", "link": "...", "age": "...", "reason": "..." }] }`
+   - Wait for all sub-agents to complete (don't proceed until all return).
+
+   **Classification criteria** (for sub-agents to apply):
    - **HIGH** — direct @mentions, DMs to Evan, PR review requests where Evan is the reviewer, assigned issues flagged urgent/blocker or with deadlines ≤ 48h, failing CI on Evan's PRs, customer escalations, calendar conflicts or meetings in the next 2h, incidents.
    - **MEDIUM** — PRs/issues Evan is participating in (commented, authored, requested changes), newly-assigned items without urgency, team-channel threads where Evan was tagged transitively, upcoming meetings today, doc edits on pages Evan owns.
    - **LOW** — FYI notifications, subscribed-channel noise, automated messages, newsletters, bot traffic, routine CI green signals.
 
-7. **Render the digest.** Follow `~/.claude/PREFERENCES.md` — bulleted lists, ASCII tables, ANSI color for emphasis. Structure:
+7. **Aggregate results.** Collect outputs from all sub-agents:
+   - Merge items into HIGH/MEDIUM/LOW buckets.
+   - Count items per service.
+   - Identify any services that failed (errors from step 5 or failed sub-agents).
+
+8. **Render the digest.** Follow `~/.claude/PREFERENCES.md` — bulleted lists, ASCII tables, ANSI color for emphasis. Structure:
 
    - **Header**: `SINCE → UNTIL` window, count of services queried (native vs. mcpx), total item count.
    - **🔴 HIGH**, **🟡 MEDIUM**, **🟢 LOW** sections — each a compact ASCII table with columns: `Service | Title | Link | Age`.
    - **By-service roll-up**: one line per service showing item count per bucket, so gaps (`Linear: 0`) are visible.
    - **Suggested actions**: 3–5 concrete next steps Evan could take today (e.g., "Reply to @alice in #platform", "Review PR #482"). Link each action to the item(s) it resolves.
 
-8. **Deliver** based on `notify`:
+9. **Deliver** based on `notify`:
 
    - `none` — print the digest to chat and stop.
    - `slack` — prefer a native `mcp__slack__*` send-message tool if one is loaded; otherwise `mcpx search "send slack message"` → `mcpx info` → `mcpx exec`. Resolve Evan's Slack user id via a `users.lookupByEmail`-style tool seeded from WHOAMI emails, then send the rendered digest as a DM to self. Print the digest to chat too, and report the returned `ts` / message id.
    - `email` — prefer a native `mcp__*` email/gmail send tool if loaded; otherwise find one via `mcpx search "send email"`. Send to `evan@evantahler.com` with subject `Biz summary <SINCE> → <UNTIL>` and the rendered markdown as the body. Print the digest to chat and report the message id.
 
-9. **Report gaps.** End the chat output with three short sections:
+10. **Report gaps.** End the chat output with three short sections:
 
-   - **Services queried** — table of normalized service label, channel used (`native` vs `mcpx`), tool invoked, item count.
-   - **Native MCP gaps** — servers / capabilities expected but not found (e.g., "no `mcp__linear__*` tools loaded").
-   - **mcpx gaps** — servers that errored, had no activity tool, or returned auth failures.
+    - **Services queried** — table of normalized service label, channel used (`native` vs `mcpx`), tool invoked, item count.
+    - **Native MCP gaps** — servers / capabilities expected but not found (e.g., "no `mcp__linear__*` tools loaded").
+    - **mcpx gaps** — servers that errored, had no activity tool, or returned auth failures.
 
-   Including the channel column makes the dedup decision auditable and tells Evan where to expand coverage next.
+    Including the channel column makes the dedup decision auditable and tells Evan where to expand coverage next.
+
+11. **Cleanup.** Remove `$TMPDIR` and all saved response files after successful aggregation.
 
 ## Notes
 
 - Always keep calls read-only. Do not post, close, merge, or delete anything in any service.
-- If a service returns a huge payload, summarize aggressively — top 5 items per service is plenty for the digest.
+- The sub-agent approach guarantees no data is lost to truncation — every tool response is saved in full before parsing.
+- Sub-agents should be spawned with reasonable timeouts (2-3 minutes each) and fail gracefully if a file is malformed.
 - If `notify=slack` or `notify=email` and the delivery step fails, still print the digest to chat and surface the delivery error in the gaps section.

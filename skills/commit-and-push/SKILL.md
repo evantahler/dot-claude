@@ -31,10 +31,10 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(bun check*)
    ```
 
 8. Push to the current branch with `git push`
-9. If the current branch is not `main`, check if a PR already exists with `gh pr view --json url 2>&1`. If no PR exists, create a draft PR:
+9. If the current branch is not `main`, check if a PR already exists with `gh pr view --json url 2>&1`. If no PR exists, create a PR:
 
    ```bash
-   gh pr create --draft --title "PR title" --body "$(cat <<'EOF'
+   gh pr create --title "PR title" --body "$(cat <<'EOF'
    ## Summary
    <description>
 
