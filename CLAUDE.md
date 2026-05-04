@@ -11,6 +11,7 @@ This is Evan Tahler's global Claude Code configuration. It applies to all projec
 These files are included in every conversation:
 
 - @PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
+- @DO_NOT_WRITE_LIKE_AI.md — Patterns to strip out so prose doesn't read like LLM output (banned words, sentence patterns, structural and tonal tells)
 
 ## Reference Files
 
@@ -18,7 +19,8 @@ Read these when relevant to the task at hand:
 
 - `WHOAMI.md` — Background on Evan: contact, career history, open-source projects, and areas of expertise
 - `WRITING_STYLE.md` — Writing style guide for replicating Evan's voice
-- `CODING_STYLE.md` — Coding conventions and engineering philosophy
+- `CODING_STYLE.md` — Coding conventions, engineering philosophy, and preferred stack/tooling (linter, frontend, doc sites, runtime, DB, etc.). Consult this when picking tools for a new project.
+- `LINKS.md` — Canonical public URLs for Evan's blog, OSS projects, Arcade resources, and reference doc-sites. Use these instead of guessing or generating URLs.
 
 ## Global Settings
 
