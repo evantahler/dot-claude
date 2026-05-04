@@ -1,7 +1,7 @@
 {
-  "effortLevel": "xhigh",
-  "skipDangerousModePermissionPrompt": true,
   "env": {
     "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
-  }
+  },
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
 }
