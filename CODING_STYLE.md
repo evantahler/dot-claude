@@ -134,6 +134,8 @@ Tools should evolve from exploratory (read-only discovery) to operational (prepa
 | **Configuration** | Environment variables | Per-environment overrides via `loadFromEnvIfSet()` |
 | **Logging** | STDOUT/STDERR | Optional colors, no complex logging frameworks |
 | **Process Management** | Direct runtime invocation | Never PM2, never supervisord |
+| **Linting & Formatting** | Biome | One fast tool for lint + format; zero-config defaults |
+| **Documentation Sites** | VitePress + LLM plugins | Markdown-first, fast static output, LLM-friendly (`llms.txt`); reference: keryxjs.com |
 
 ---
 
@@ -151,6 +153,8 @@ When writing code for Evan:
 - Configure via environment variables
 - Derive types from source-of-truth definitions
 - Follow existing patterns — if the codebase does it one way, do it that way
+- Use Biome for lint + format on any new TS/JS project
+- Use VitePress (with LLM plugins) for docs/marketing sites; use Next.js for application frontends
 
 **DON'T:**
 
@@ -162,3 +166,4 @@ When writing code for Evan:
 - Over-catch errors — let them bubble
 - Add logging frameworks, just use STDOUT
 - Create separate routing files — routes belong on the action
+- Build a doc site in Next.js when VitePress fits
