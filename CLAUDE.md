@@ -11,7 +11,7 @@ This is Evan Tahler's global Claude Code configuration. It applies to all projec
 These files are included in every conversation:
 
 - @PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
-- @DO_NOT_WRITE_LIKE_AI.md — Patterns to strip out so prose doesn't read like LLM output (banned words, sentence patterns, structural and tonal tells)
+- @SOUND_HUMAN.md — Patterns to strip out so prose doesn't read like LLM output (banned words, sentence patterns, structural and tonal tells, format-specific failure modes, and a post-draft audit checklist)
 
 ## Reference Files
 
