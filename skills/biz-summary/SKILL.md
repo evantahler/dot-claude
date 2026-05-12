@@ -31,7 +31,7 @@ Parse `$ARGUMENTS` into two optional fields. Order does not matter, either can b
 
    - Keep both values for later filtering and the digest header.
 
-2. **Load identity.** Read `~/.claude/WHOAMI.md` to capture Evan's name, emails (personal + work), GitHub handle, and role. Use these as the "me" filter when querying services — so a report flags items where Evan is the author, assignee, reviewer, @mentioned, DM recipient, or meeting attendee.
+2. **Load identity.** Read `~/.claude/docs/WHOAMI.md` to capture Evan's name, emails (personal + work), GitHub handle, and role. Use these as the "me" filter when querying services — so a report flags items where Evan is the author, assignee, reviewer, @mentioned, DM recipient, or meeting attendee.
 
 3. **Discover services — both channels, then identify each one.**
 
@@ -86,7 +86,7 @@ Parse `$ARGUMENTS` into two optional fields. Order does not matter, either can b
    - Count items per service.
    - Identify any services that failed (errors from step 5 or failed sub-agents).
 
-8. **Render the digest.** Follow `~/.claude/PREFERENCES.md` — bulleted lists, ASCII tables, ANSI color for emphasis. Structure:
+8. **Render the digest.** Follow `~/.claude/docs/PREFERENCES.md` — bulleted lists, ASCII tables, ANSI color for emphasis. Structure:
 
    - **Header**: `SINCE → UNTIL` window, count of services queried (native vs. mcpx), total item count.
    - **🔴 HIGH**, **🟡 MEDIUM**, **🟢 LOW** sections — each a compact ASCII table with columns: `Service | Title | Link | Age`.
