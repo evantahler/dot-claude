@@ -1,7 +1,7 @@
 ---
 name: worktree-setup
 description: Scaffold .claude/worktree_start.sh and .claude/worktree_end.sh in the current repo so it's ready to use /worktree-start and /worktree-end. Run this once per repo. Add .claude/worktree_id to .gitignore.
-disable-model-invocation: false
+disable-model-invocation: true
 allowed-tools: Bash(git *), Bash(mkdir *), Bash(chmod *), Bash(test *), Bash(grep *), Read, Write, Edit
 ---
 

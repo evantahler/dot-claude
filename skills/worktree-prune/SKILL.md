@@ -1,7 +1,7 @@
 ---
 name: worktree-prune
 description: Clean up abandoned worktrees under .claude/worktrees/. For each, run .claude/worktree_end.sh (if present) to release per-worktree resources, then remove the worktree. Finishes with git worktree prune.
-disable-model-invocation: false
+disable-model-invocation: true
 allowed-tools: Bash(git *), Bash(cat *), Bash(echo *), Bash(ls *), Bash(test *), Bash(*/.claude/worktree_end.sh *), Read
 ---
 
