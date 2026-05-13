@@ -40,6 +40,10 @@
 - Data engineering (ELT/ETL pipelines, SQL optimization)
 - Engineering leadership, product management, hiring
 
+## Writing
+
+Writes regularly at **[evantahler.com](https://www.evantahler.com)** — 140+ posts since 2011 covering Actionhero/Keryx framework work, Node.js production engineering, data engineering at Grouparoo/Airbyte, AI and MCP work at Arcade, plus engineering leadership and hiring.
+
 ## Speaking
 
 Frequent speaker at software development conferences including **Airflow Summit**, **CascadiaJS**, and **SeattleJS** — topics span AI, product management, data engineering, Node.js, TypeScript, and DevOps.
