@@ -1,5 +1,14 @@
 # CLAUDE.md
 
+```
+  ██████╗  ██████╗ ████████╗   ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗
+  ██╔══██╗██╔═══██╗╚══██╔══╝  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝
+  ██║  ██║██║   ██║   ██║     ██║     ██║     ███████║██║   ██║██║  ██║█████╗
+  ██║  ██║██║   ██║   ██║     ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝
+  ██████╔╝╚██████╔╝   ██║     ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗
+  ╚═════╝  ╚═════╝    ╚═╝      ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
+```
+
 This is Evan Tahler's global Claude Code configuration. It applies to all projects and repositories. Project-specific instructions live in each project's own `CLAUDE.md`.
 
 ## Tools
@@ -10,16 +19,16 @@ This is Evan Tahler's global Claude Code configuration. It applies to all projec
 
 These files are included in every conversation:
 
-- @PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
+- @docs/PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
 
 ## Reference Files
 
 Read these when relevant to the task at hand:
 
-- `WHOAMI.md` — Background on Evan: contact, career history, open-source projects, and areas of expertise
-- `WRITING_STYLE.md` — Writing style guide for replicating Evan's voice
-- `CODING_STYLE.md` — Coding conventions, engineering philosophy, and preferred stack/tooling (linter, frontend, doc sites, runtime, DB, etc.). Consult this when picking tools for a new project.
-- `LINKS.md` — Canonical public URLs for Evan's blog, OSS projects, Arcade resources, and reference doc-sites. Use these instead of guessing or generating URLs.
+- `docs/WHOAMI.md` — Background on Evan: contact, career history, open-source projects, and areas of expertise
+- `docs/WRITING_STYLE.md` — Writing style guide for replicating Evan's voice
+- `docs/CODING_STYLE.md` — Coding conventions, engineering philosophy, and preferred stack/tooling (linter, frontend, doc sites, runtime, DB, etc.). Consult this when picking tools for a new project.
+- `docs/LINKS.md` — Canonical public URLs for Evan's blog, OSS projects, Arcade resources, and reference doc-sites. Use these instead of guessing or generating URLs.
 
 ## Global Settings
 

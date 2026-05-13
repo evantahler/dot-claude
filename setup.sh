@@ -53,13 +53,4 @@ else
   echo "==> Installed to $CLAUDE_DIR"
 fi
 
-# 4. Install dependencies
-if command -v bun &>/dev/null; then
-  echo "==> Installing dependencies with bun..."
-  cd "$CLAUDE_DIR" && bun install
-else
-  echo "==> bun not found — skipping dependency install."
-  echo "    Install bun (https://bun.sh) then run: cd ~/.claude && bun install"
-fi
-
 echo "==> Done! Your Claude Code global config is ready at $CLAUDE_DIR"
