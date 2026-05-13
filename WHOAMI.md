@@ -6,8 +6,6 @@
 
 ## Contact
 
-- **Personal email:** evan [at] evantahler [dot] com (also evantahler [at] gmail [dot] com)
-- **Work email:** evan [at] arcade [dot] dev
 - **Blog:** [evantahler.com](https://www.evantahler.com)
 - **GitHub:** [evantahler](https://github.com/evantahler) (account since June 2010)
 - **Twitter/X:** [evantahler](https://twitter.com/evantahler)
