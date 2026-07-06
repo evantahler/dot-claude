@@ -3,7 +3,7 @@ name: review
 description: Multi-agent code review of branch changes, uncommitted work, or a specified scope. Spawns paired Opus+Sonnet specialists for simplicity, testability, security, and docs; corroborates findings via an inline judge; reports by severity.
 argument-hint: "[scope description, e.g. 'this PR' or 'the new auth model']"
 disable-model-invocation: false
-allowed-tools: Bash(git *), Bash(gh *), Bash(mcpx *), Bash(date *), Bash(mkdir *), Bash(ls *), Bash(cat *), Bash(find *), Bash(rg *), Bash(wc *), Read, Write, Glob, Grep, Agent, AskUserQuestion
+allowed-tools: Bash(git *), Bash(gh *), Bash(date *), Bash(mkdir *), Bash(ls *), Bash(cat *), Bash(find *), Bash(rg *), Bash(wc *), Read, Write, Glob, Grep, Agent, AskUserQuestion
 ---
 
 # /review — Thorough multi-agent code review
@@ -54,8 +54,8 @@ You do NOT review code yourself — you only collect, summarize, and link.
    - github.com/.../issues/N or "#N" with a repo context →
        `gh issue view N --json title,body,comments,labels`
    - linear.app/... or "ENG-123" style →
-       `mcpx search "linear get issue"` → `mcpx info` → `mcpx exec`
-   - notion.so/..., atlassian.net/browse/... → same mcpx pattern
+       find a `mcp__*` Linear tool (load its schema via `ToolSearch`) and call it
+   - notion.so/..., atlassian.net/browse/... → same native MCP pattern
    Save each to $BUNDLE/refs/<slug>.md. If a fetch fails, write a stub noting
    the URL and the error so reviewers know it was attempted.
 6. All CLAUDE.md and AGENTS.md files at repo root AND in every changed
@@ -111,10 +111,10 @@ in diff.patch — not pre-existing code, unless directly relevant to a changed l
 - DO NOT run shell commands that write or modify (no `>`, `>>`, `tee`, `sed -i`,
   `git commit`, `git add`, etc.). `Read`, `Grep`, `Glob`, and read-only `Bash`
   (`cat`, `ls`, `git log`, `git diff`, `git show`, `rg`) are fine.
-- You MAY use MCP / mcpx tools to fetch additional read-only context if a
+- You MAY use `mcp__*` tools to fetch additional read-only context if a
   finding hinges on it — e.g., pulling a Linear ticket referenced in the diff
-  that the context loader missed. Prefer mcpx ("mcpx search ..." → "mcpx exec
-  ...") over hardcoded server names.
+  that the context loader missed. Load a tool's schema via `ToolSearch` when
+  it isn't already available.
 - Your ONLY output is the JSON in your reply (see "Output" below).
 
 # Rules of engagement

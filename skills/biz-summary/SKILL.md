@@ -1,9 +1,9 @@
 ---
 name: biz-summary
-description: Aggregate recent activity across all connected MCP and mcpx services into a prioritized business summary (HIGH/MEDIUM/LOW) for the configured time window. Optionally deliver via Slack or email.
+description: Aggregate recent activity across all connected MCP services into a prioritized business summary (HIGH/MEDIUM/LOW) for the configured time window. Optionally deliver via Slack or email.
 argument-hint: "[time-range] [notify:none|slack|email]"
 disable-model-invocation: false
-allowed-tools: Bash(mcpx *), Bash(date *), Read, Write, Agent, mcp__*
+allowed-tools: Bash(date *), Read, Write, Agent, mcp__*
 ---
 
 # Biz Summary
@@ -33,16 +33,15 @@ Parse `$ARGUMENTS` into two optional fields. Order does not matter, either can b
 
 2. **Load identity.** Read `~/.claude/docs/WHOAMI.md` to capture Evan's name, emails (personal + work), GitHub handle, and role. Use these as the "me" filter when querying services — so a report flags items where Evan is the author, assignee, reviewer, @mentioned, DM recipient, or meeting attendee.
 
-3. **Discover services — both channels, then identify each one.**
+3. **Discover services, then identify each one.**
 
-   - **Native MCP**: scan the currently-loaded tool list for names prefixed `mcp__<server>__<tool>` (e.g., `mcp__github__list_issues`). Group tools by `<server>` prefix. If a needed tool's schema is deferred, load it via `ToolSearch` (`"select:<tool_name>"` or keyword search) before invoking.
-   - **mcpx**: `mcpx search ""` (or `mcpx list` if supported) to enumerate configured servers and their tools.
+   - Scan the currently-loaded tool list for names prefixed `mcp__<server>__<tool>` (e.g., `mcp__github__list_issues`). Group tools by `<server>` prefix. If a needed tool's schema is deferred, load it via `ToolSearch` (`"select:<tool_name>"` or keyword search) before invoking.
    - **Identify the service behind each server** — the server name alone isn't always enough, so use this cascade:
      1. The server key itself (e.g., `github`, `linear`, `slack`, `gmail`) — usually definitive.
-     2. If ambiguous (internal name like `acme`, `work`, `tools`), read a tool's description — native MCP via the schema returned by `ToolSearch`, mcpx via `mcpx info <server> <tool>`. The description typically names the real service.
+     2. If ambiguous (internal name like `acme`, `work`, `tools`), read a tool's description via the schema returned by `ToolSearch`. The description typically names the real service.
      3. Tool-name shape as a tiebreaker: `list_issues`/`create_issue` → issue tracker; `send_message`/`post_message` → chat; `send_email`/`list_messages` → mail; `list_events` → calendar.
      4. Normalize to a lowercase service label (e.g. `github`, `linear`, `slack`, `gmail`, `gcal`, `notion`).
-   - **De-duplicate by normalized label.** If the same service surfaces on both channels, **prefer native MCP** — skip the mcpx copy. Fall back to mcpx only for services with no native coverage.
+   - **De-duplicate by normalized label** so a service that exposes several tools is only queried once.
    - Do **not** hardcode service names. The skill must adapt as servers are added or removed.
 
 4. **Plan a read-only activity query per service.** For each server, pick the tool that best covers "what happened to me or my work in this window". Examples by shape (not a fixed list):
@@ -57,14 +56,13 @@ Parse `$ARGUMENTS` into two optional fields. Order does not matter, either can b
    | Notifications (GitHub Notifications) | unread items |
    | Docs (Notion, Drive) | recently edited pages shared with Evan |
 
-   - Native MCP: load schema via `ToolSearch` if needed, then call directly.
-   - mcpx: `mcpx info <server> <tool>` first, then `mcpx exec <server> <tool> '<json>'`.
+   - Load the tool's schema via `ToolSearch` if needed, then call it directly.
    - Prefer tools that accept a time-window argument. If not, filter client-side using `SINCE`/`UNTIL`.
 
 5. **Execute and persist — NEVER truncate.**
 
    - Create a temp directory: `TMPDIR=$(mktemp -d /tmp/biz-summary.XXXXXX)`
-   - Fire all discovery calls in parallel using `Bash` with `run_in_background: true` — mix native `mcp__*` tool calls and `Bash(mcpx exec ...)` calls freely.
+   - Fire the `mcp__*` discovery calls in parallel.
    - **Critical**: For each tool call, save the FULL raw JSON response to `$TMPDIR/<service>_<tool>.json`. Use `tee` or redirect to capture complete output without truncation.
    - If a call fails, still write the error to `$TMPDIR/<service>_<tool>.error` so the sub-agent can report it.
    - Track which files were created and their corresponding service/tool metadata.
@@ -88,7 +86,7 @@ Parse `$ARGUMENTS` into two optional fields. Order does not matter, either can b
 
 8. **Render the digest.** Follow `~/.claude/docs/PREFERENCES.md` — bulleted lists, ASCII tables, ANSI color for emphasis. Structure:
 
-   - **Header**: `SINCE → UNTIL` window, count of services queried (native vs. mcpx), total item count.
+   - **Header**: `SINCE → UNTIL` window, count of services queried, total item count.
    - **🔴 HIGH**, **🟡 MEDIUM**, **🟢 LOW** sections — each a compact ASCII table with columns: `Service | Title | Link | Age`.
    - **By-service roll-up**: one line per service showing item count per bucket, so gaps (`Linear: 0`) are visible.
    - **Suggested actions**: 3–5 concrete next steps Evan could take today (e.g., "Reply to @alice in #platform", "Review PR #482"). Link each action to the item(s) it resolves.
@@ -96,16 +94,15 @@ Parse `$ARGUMENTS` into two optional fields. Order does not matter, either can b
 9. **Deliver** based on `notify`:
 
    - `none` — print the digest to chat and stop.
-   - `slack` — prefer a native `mcp__slack__*` send-message tool if one is loaded; otherwise `mcpx search "send slack message"` → `mcpx info` → `mcpx exec`. Resolve Evan's Slack user id via a `users.lookupByEmail`-style tool seeded from WHOAMI emails, then send the rendered digest as a DM to self. Print the digest to chat too, and report the returned `ts` / message id.
-   - `email` — prefer a native `mcp__*` email/gmail send tool if loaded; otherwise find one via `mcpx search "send email"`. Send to `evan@evantahler.com` with subject `Biz summary <SINCE> → <UNTIL>` and the rendered markdown as the body. Print the digest to chat and report the message id.
+   - `slack` — use a `mcp__slack__*` send-message tool (load its schema via `ToolSearch` if needed). Resolve Evan's Slack user id via a `users.lookupByEmail`-style tool seeded from WHOAMI emails, then send the rendered digest as a DM to self. Print the digest to chat too, and report the returned `ts` / message id.
+   - `email` — use a `mcp__*` email/gmail send tool (load its schema via `ToolSearch` if needed). Send to `evan@evantahler.com` with subject `Biz summary <SINCE> → <UNTIL>` and the rendered markdown as the body. Print the digest to chat and report the message id.
 
 10. **Report gaps.** End the chat output with three short sections:
 
-    - **Services queried** — table of normalized service label, channel used (`native` vs `mcpx`), tool invoked, item count.
-    - **Native MCP gaps** — servers / capabilities expected but not found (e.g., "no `mcp__linear__*` tools loaded").
-    - **mcpx gaps** — servers that errored, had no activity tool, or returned auth failures.
+    - **Services queried** — table of normalized service label, tool invoked, item count.
+    - **Gaps** — servers / capabilities expected but not found (e.g., "no `mcp__linear__*` tools loaded"), plus servers that errored, had no activity tool, or returned auth failures.
 
-    Including the channel column makes the dedup decision auditable and tells Evan where to expand coverage next.
+    This tells Evan where to expand coverage next.
 
 11. **Cleanup.** Remove `$TMPDIR` and all saved response files after successful aggregation.
 

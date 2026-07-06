@@ -27,7 +27,6 @@
 
 - **[Actionhero](https://github.com/actionhero/actionhero)** (~2.4k stars) — Realtime multi-transport Node.js API server (BDFL/creator)
 - **[Keryx](https://github.com/actionhero/keryx)** (~29 stars) — Fullstack TypeScript framework for MCP and APIs ([keryxjs.com](https://keryxjs.com))
-- **[mcpx](https://github.com/evantahler/mcpx)** (~32 stars) — Command-line interface for MCP servers; "curl for MCP"
 - **[membot](https://github.com/evantahler/membot)** — Versioned context store with hybrid search for AI agents; stdio + HTTP MCP server and CLI
 - **[node-resque](https://github.com/actionhero/node-resque)** (~1.4k stars) — Node.js background jobs backed by Redis
 - **[elasticsearch-dump](https://github.com/elasticsearch-dump/elasticsearch-dump)** (~7.9k stars) — Import/export tools for Elasticsearch & OpenSearch

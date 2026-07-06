@@ -19,7 +19,6 @@ Reads like someone explaining what they figured out in a Slack channel they trus
 - "Nerd. Future late-night talk show host."
 - "Oh well. Sorry community I had built :/" (after losing blog comments)
 - "Also, I have a job." (closing the cofounder rant)
-- "He built mcpx because something needed to exist and it didn't."
 
 ---
 
@@ -161,8 +160,8 @@ Sample datasets use his own name and his colleagues' names — "Evan: 1, Christi
 
 **Name your own tradeoffs proactively.**
 
-- "I want to be honest about where mcpx fits and where it doesn't."
-- "I'm building mcpx because the left column didn't have good tooling. Not because the right column doesn't matter."
+- State plainly where a tool fits and where it doesn't — "I want to be honest about where this fits and where it doesn't."
+- Say why you built it without overselling: you filled a gap the existing tooling didn't cover, not because the alternatives don't matter.
 
 **Include a "what can we do better?" section in leadership posts.**
 
@@ -179,7 +178,7 @@ In hiring/process/leadership posts, include a section that's genuinely self-crit
 | **Strategic / opinion** (curl for MCP, Keryx) | Confident strategist, surveys the landscape, draws lines | "These aren't competing approaches. They're different interfaces to the same infrastructure." |
 | **Leadership / hiring** (Voom, Repeat Rate, On Inclusion) | Transparent, philosophical, occasionally vulnerable | "This is my official ask for you to let me know if I'm doing something wrong." |
 | **Tactical tutorial** (Docker, fullstack TS) | Practical colleague, walks through code, owns conviction | "You shouldn't be using NPM, YARN, PM2…" |
-| **Framework / product launch** (Actionhero, Keryx, mcpx) | Builder-as-narrator, undersells, names the gap | "He built mcpx because something needed to exist and it didn't." |
+| **Framework / product launch** (Actionhero, Keryx) | Builder-as-narrator, undersells, names the gap | "Actionhero is stable, but I'm not going to pretend it's where my energy is going." |
 | **Confrontational rant** (Won't Be Your Co-Founder) | Sharp open, then 3 paragraphs of concrete admiration | "The #1 reason I will turn you down is I don't respect you." → ModCloth, TaskRabbit examples |
 | **Release notes / community update** | Light, exclamatory, tags humans | "HUZZAH!" / "Thanks to @synthmeat." |
 

@@ -23,7 +23,6 @@ Canonical public URLs for resources Claude may reference. **Public links only** 
 - node-resque: https://github.com/actionhero/node-resque — Redis-backed background jobs
 - Keryx: https://github.com/actionhero/keryx — site at https://keryxjs.com (also serves as the canonical VitePress doc-site reference)
 - elasticsearch-dump: https://github.com/elasticsearch-dump/elasticsearch-dump — ES/OpenSearch import/export
-- mcpx: https://github.com/evantahler/mcpx — MCP tool discovery/exec CLI
 - Grouparoo (archived): https://github.com/grouparoo/grouparoo — open-source reverse-ETL
 
 ## Tooling References
