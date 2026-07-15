@@ -2,7 +2,7 @@
   "env": {
     "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
   },
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "ghostty",
   "tui": "fullscreen"
