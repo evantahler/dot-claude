@@ -10,7 +10,7 @@ The full guidance for this skill now lives in the root writing styleguide, so th
 **Read `~/.claude/docs/WRITING_STYLE.md` and apply it.** The parts, in order of relevance to this skill:
 
 - **Part II — Sounding human: designing out the AI tells** — the core of this skill. Constrain before drafting (the pre-draft constraints), draft, then run the post-draft audit. The **Appendix — AI-tell watchlist** is the vocabulary/structure lookup for the audit.
-- **Part I — The method: meaning first** — the drafting/revision method underneath Part II (Orwell's draft-then-revise, Pinker's curse-of-knowledge check, the writer's own rules).
-- **Part III — Evan's voice** — apply this too whenever the piece is in Evan's voice; where its voice moves (em dashes, one emoji, "HUZZAH!") appear to conflict with Part II's generic caps, Part III wins on voice (see Part II, "Reconciling the anti-tell caps with the owner's voice").
+- **Part I — The method: draft, then revise** — the drafting/revision method underneath Part II (Orwell's draft-then-revise, Pinker's curse-of-knowledge check, the writer's own rules).
+- **Part III — Evan's voice** — apply this too whenever the piece is in Evan's voice; where its voice moves (em dashes, one emoji, "HUZZAH!") appear to conflict with Part II's generic caps, Part III wins on voice. The precedence rule is stated in the guide's header block and detailed in Part II, "Reconciling the caps with Evan's voice."
 
 The workflow is unchanged: **constrain before drafting, audit after.**

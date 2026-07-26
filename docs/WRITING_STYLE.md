@@ -4,6 +4,8 @@
 
 Three concerns, in order of use: **the method** gets the meaning clear, **the anti-AI layer** keeps it from reading as machine-written, **the voice** makes it sound like Evan. The watch-word tables live in the Appendix.
 
+**Precedence, when the parts disagree: Part III wins on voice.** Part II's caps (one em-dash, no emoji, no exclamation points) are floors for generic prose. Evan's documented style earns em dashes, trailing ellipses, one emoji per post, and the occasional "HUZZAH!" — keep those. Cut only the *reflexive* machine version of each move. Details in Part II, "Reconciling the caps with Evan's voice."
+
 ---
 
 ## Part I — The method: draft, then revise
@@ -52,7 +54,7 @@ The old vocabulary tells ("delve," "tapestry") are mostly trained out. The tells
 
 ### Pre-draft constraints
 
-- **Banned by default** (unless the voice genuinely uses them): delve, leverage, utilize, harness, streamline, robust, seamless, cutting-edge, pivotal, transformative, innovative, paradigm, ecosystem, landscape, realm, tapestry, testament, navigate (figurative), unlock, empower, elevate, underscore, intricate, meticulous, core (adj.), modern (adj.). Full table + replacements in the Appendix.
+- **Banned by default** (unless the voice genuinely uses them): delve, leverage, utilize, harness, streamline, seamless, cutting-edge, pivotal, transformative, innovative, paradigm, ecosystem, landscape, realm, tapestry, testament, navigate (figurative), unlock, empower, elevate, underscore, intricate, meticulous, core (adj.), modern (adj.). Full table + replacements in the Appendix.
 - **Structures banned by default** (at most once per piece, never in opener/closer): negative parallelism ("It's not X, it's Y"); rule of three; "In today's [X] landscape" / "In an era of" openers; rhetorical-question openers; summary conclusions ("In conclusion," "Ultimately"); sycophantic openers ("Great question").
 - **Formatting for prose:** reserve markdown for content that needs it. No bullet lists unless items are genuinely discrete; no headers unless the piece runs past ~1,500 words and hits real section breaks; no bolding except genuine emphasis; no decorative emoji.
 - **Sentence-length variance.** Mix real fragments (3–6 words) with long sentences (25+). If 80% land in the 12–22 word range, it reads as AI.
@@ -83,7 +85,9 @@ Run every item; fix any that fires. Five or more fires means a structural rewrit
 9. **Search-engine test** — any paragraph that could be a top-three Google result → sharper angle.
 10. **Read-aloud test** — a stumble for you is a stumble for the reader.
 
-**When writing as Evan, Part III wins on voice.** The caps above (one em-dash, no emoji, no exclamation points) are floors for generic prose. Evan's documented style earns em dashes, trailing ellipses, one emoji per post, and the occasional "HUZZAH!" — keep those; cut only the *reflexive* machine version of each move.
+### Reconciling the caps with Evan's voice
+
+**When writing as Evan, Part III wins on voice.** The caps above (one em-dash, no emoji, no exclamation points) are floors for generic prose. Evan's documented style earns em dashes, trailing ellipses, one emoji per post, and the occasional "HUZZAH!" — keep those; cut only the *reflexive* machine version of each move. Two words follow this rule out of the watchlist: **`robust` and `compelling` are voice-sanctioned in technical prose** (Part III's reach-for list) and exempt from the Appendix there. In marketing copy both still read as filler — see Format-specific failure modes.
 
 ### Format-specific failure modes
 
@@ -171,7 +175,7 @@ Run every item; fix any that fires. Five or more fires means a structural rewrit
 
 | ✅ Reach for | ❌ Avoid |
 |---|---|
-| compelling, robust, surface area, leeway | leverage, synergy, holistic |
+| compelling, robust (exempt from the Appendix in technical prose, not in marketing), surface area, leeway | leverage, synergy, holistic |
 | "let's explore" / "let's walk through" | "in today's world" / "as we all know" |
 | "first-class citizen", "purpose-built" | "best-in-class", "innovative", "cutting-edge" |
 | "that said" / "but here's the thing" | "moreover" / "furthermore" |
@@ -203,7 +207,7 @@ Open with a specific moment → admit a problem or surprise → walk through the
 | navigate (figurative) | handle, work through, figure out |
 | unlock / empower / elevate | enable, let, give, improve |
 | underscore | show, highlight — or cut |
-| robust / seamless | a specific quality (durable, smooth, handles edge cases) |
+| seamless | a specific quality (durable, smooth, handles edge cases) |
 | cutting-edge / innovative / groundbreaking / game-changer | the actual novelty or change; "new," "the latest" |
 | pivotal / transformative | important, decisive; the specific change |
 | paradigm / ecosystem / landscape / realm | the actual thing, set, situation, or field |
@@ -216,7 +220,7 @@ Open with a specific moment → admit a problem or surprise → walk through the
 | core / modern / key (adj.) | the thing without the modifier |
 | crucial / vital / essential | important, required, needed |
 | significant / various / numerous / comprehensive | the actual size; name them; a count |
-| dynamic / compelling / profound | the specific change, reason, or size of effect |
+| dynamic / profound | the specific change, reason, or size of effect |
 | spectral / liminal / ethereal (fiction) | concrete description |
 
 ### Openers, connectives, closers
