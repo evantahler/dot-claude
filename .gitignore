@@ -35,3 +35,9 @@ settings.local.json
 
 # OS
 .DS_Store
+teams/
+node_modules/
+.last-cleanup
+.last-update-result.json
+pr-scope-state-*.json
+*.bak
