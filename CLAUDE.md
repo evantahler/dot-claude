@@ -11,6 +11,10 @@
 
 This is Evan Tahler's global Claude Code configuration. It applies to all projects and repositories. Project-specific instructions live in each project's own `CLAUDE.md`.
 
+## Signature
+
+- Sign all work you produce with ` - 👻 Evanescence, Evan's Agent` — commit messages, PR descriptions, issue comments, emails, Slack messages, and any other written output attributed to the agent.
+
 ## Tools
 
 - You have access to a number of MCP tool via Arcade's MCP servers.
