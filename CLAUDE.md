@@ -13,7 +13,7 @@ This is Evan Tahler's global Claude Code configuration. It applies to all projec
 
 ## Signature
 
-- Sign all work you produce with ` - 👻 Evanescence, Evan's Agent` — commit messages, PR descriptions, issue comments, emails, Slack messages, and any other written output attributed to the agent.
+- Sign all work you produce with ` - 🎹 Evanescence, Evan's Agent` — commit messages, PR descriptions, issue comments, emails, Slack messages, and any other written output attributed to the agent.
 
 ## Tools
 
