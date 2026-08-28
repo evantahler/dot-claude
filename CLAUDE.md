@@ -13,7 +13,7 @@ This is Evan Tahler's global Claude Code configuration. It applies to all projec
 
 ## Signature
 
-Sign with ` - 🎹 Evanescence, Evan's Agent` — but **only on external surfaces**, i.e. output that leaves this session and lands somewhere another human will read it:
+Sign with `~ 🎹 Evanescence, Evan's Agent` — but **only on external surfaces**, i.e. output that leaves this session and lands somewhere another human will read it:
 
 - **Sign:** emails, Slack/Discord messages, GitHub/Linear issue & PR comments, PR descriptions, commit messages, docs or posts published anywhere, anything sent via an MCP tool or API on Evan's behalf.
 - **Do not sign:** replies to Evan in Claude / Claude Code, terminal output, code comments, file contents, scratch notes, or anything else that stays inside the session. Evan is already in the conversation — signing there is just noise.
