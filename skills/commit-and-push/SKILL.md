@@ -13,10 +13,12 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(bun check*)
 3. Run `git diff` and `git diff --staged` to understand the changes
 4. Run `git log --oneline -5` to see recent commit style
 5. Stage all relevant changed files by name (do NOT use `git add -A` or `git add .`)
-6. If `$ARGUMENTS` is provided, use it as the commit message. Otherwise, write a concise commit message based on the diff. Always append the co-author trailer:
+6. If `$ARGUMENTS` is provided, use it as the commit message. Otherwise, write a concise commit message based on the diff. A commit message is an external surface, so per `docs/SIGNATURE.md` it always ends with two things — the signature on its own line, then the co-author trailer last, so git still parses the final paragraph as the trailer block. Name the model that actually wrote the commit; do not copy a stale version from this file.
 
    ```text
-   Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+   ~ 🎹 Evanescence, Evan's Agent
+
+   Co-Authored-By: Claude <model> <noreply@anthropic.com>
    ```
 
 7. Commit using a HEREDOC:
@@ -25,7 +27,9 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(bun check*)
    git commit -m "$(cat <<'EOF'
    message here
 
-   Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+   ~ 🎹 Evanescence, Evan's Agent
+
+   Co-Authored-By: Claude <model> <noreply@anthropic.com>
    EOF
    )"
    ```
@@ -39,11 +43,15 @@ allowed-tools: Bash(git *), Bash(bun lint*), Bash(bun format*), Bash(bun check*)
    <description>
 
    🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+   ~ 🎹 Evanescence, Evan's Agent
    EOF
    )"
    ```
 
    Use the commit message as the PR title (first line) and expand on the changes in the body. If the PR closes a GitHub issue, include `Closes <issue URL>` (e.g., `Closes https://github.com/owner/repo/issues/123`) in the body so GitHub automatically links and closes the issue on merge.
+
+   The harness footer is not a substitute for the signature — a PR body carries both. The same applies to any `gh pr edit` below.
 
    If a PR already exists, review the current title and description with `gh pr view --json title,body`. If they no longer accurately reflect the full set of changes on the branch (e.g., new commits added since the PR was created), update them with `gh pr edit --title "..." --body "..."`. Use `git log origin/main..HEAD` to understand all changes on the branch.
 
