@@ -11,10 +11,6 @@
 
 This is Evan Tahler's global Claude Code configuration. It applies to all projects and repositories. Project-specific instructions live in each project's own `CLAUDE.md`.
 
-## Signature
-
-Sign external output with `~ 🎹 Evanescence, Evan's Agent` — full rule in @docs/SIGNATURE.md.
-
 ## Tools
 
 - You have access to a number of MCP tool via Arcade's MCP servers.
@@ -24,7 +20,7 @@ Sign external output with `~ 🎹 Evanescence, Evan's Agent` — full rule in @d
 These files are included in every conversation:
 
 - @docs/PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
-- `docs/SIGNATURE.md` — The agent signature: which surfaces get it, why harness footers don't replace it, placement, and the pre-send checkpoint (included via the Signature section above)
+- @docs/SIGNATURE.md — The agent signature: which surfaces get it, why harness footers don't replace it, placement, and the pre-send checkpoint
 
 ## Reference Files
 
