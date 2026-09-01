@@ -130,5 +130,6 @@
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "ghostty",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "includeCoAuthoredBy": false
 }

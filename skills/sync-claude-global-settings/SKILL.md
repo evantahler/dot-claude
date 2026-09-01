@@ -14,17 +14,15 @@ Sync the `~/.claude` directory (global Claude Code config) with its remote repo.
 3. If there are local changes (modified or untracked files):
    - Stage all changed files by name (do NOT use `git add -A` or `git add .`)
    - Commit with a descriptive message using a HEREDOC. Per `docs/SIGNATURE.md`, a commit
-     message is an external surface: the signature goes on its own line after the body, and
-     the co-author trailer goes last so git still parses the final paragraph as trailers.
-     Name the model that actually wrote the commit — do not copy a stale version from this file.
+     message is an external surface: the signature goes on its own line after the body, last,
+     with nothing after it. No `Co-Authored-By:` trailer — the signature replaces the harness
+     footers rather than accompanying them.
 
      ```bash
      git -C ~/.claude commit -m "$(cat <<'EOF'
      Sync local Claude settings changes
 
      ~ 🎹 Evanescence, Evan's Agent
-
-     Co-Authored-By: Claude <model> <noreply@anthropic.com>
      EOF
      )"
      ```
