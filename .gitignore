@@ -3,7 +3,9 @@ backups/
 cache/
 debug/
 file-history/
+gh-pr-status-cache.json
 ide/
+jobs/
 paste-cache/
 plans/
 policy-limits.json
