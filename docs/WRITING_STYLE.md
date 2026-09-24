@@ -96,6 +96,8 @@ Writing for a company audience is a real register, not a different person.
 
 **What must not change:** the jokes ("checkpointable (totally a real word)"), the receipts, the admitted limits, the first person, and the abrupt ending ("Keep on Syncing!").
 
+**Arcade technical writing follows the house guide.** For Arcade docs, READMEs, tool descriptions, and other technical writing published under the company name, also follow the [Arcade Technical Writing Guide](https://www.arcadians.dev/everyone/technical-writing-guide). It's behind an `@arcade.dev` Google login, so a plain fetch only returns the sign-in page. Read it through an authenticated route, or ask Evan for the relevant section. Where the two disagree on Arcade material, the house guide wins on conventions (terminology, formatting, doc structure) and this doc wins on voice.
+
 **The failure mode to watch for** is flat hedged abstraction — the sentence that could have come from any company's blog: "In the realm of data movement, one of the most important aspects we deal with is data compatibility." Nothing on the personal blog reads like that. When a work-mode draft goes limp, the fix is a specific number, a real record, or a joke — not more qualifiers.
 
 ## No word police
