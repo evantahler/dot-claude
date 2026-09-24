@@ -96,6 +96,8 @@ Writing for a company audience is a real register, not a different person.
 
 **What must not change:** the jokes ("checkpointable (totally a real word)"), the receipts, the admitted limits, the first person, and the abrupt ending ("Keep on Syncing!").
 
+**Technical documents follow the [Arcade Technical Writing Guide](https://www.arcadians.dev/everyone/technical-writing-guide), not this doc.** Design docs, ADRs, specs, runbooks, READMEs, and PR descriptions state current truth with the decision first, and pass its deletion test. Read it before drafting one: the site needs an `@arcade.dev` login, so fetch it with the Arcade MCP tool `ArcadeCompanyDocs.read_doc`, not a plain web fetch. This doc covers posts and prose with a voice. The two collide on dead ends: a post narrates them, a technical document deletes them as archaeology.
+
 **The failure mode to watch for** is flat hedged abstraction — the sentence that could have come from any company's blog: "In the realm of data movement, one of the most important aspects we deal with is data compatibility." Nothing on the personal blog reads like that. When a work-mode draft goes limp, the fix is a specific number, a real record, or a joke — not more qualifiers.
 
 ## No word police
