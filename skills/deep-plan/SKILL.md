@@ -13,7 +13,7 @@ Turn a big ask ("build a daemon + hosted service + CLI that does X, cover 100% o
 documents, not code:
 
 ```
-AGENTS.md                      rules + conventions (the repo's working summary; no CLAUDE.md symlink needed)
+AGENTS.md                      rules + conventions, from AGENTS.template.md (no CLAUDE.md symlink needed)
 README.md                      what it is, install, quickstart — marked "planned, not built"
 docs/ARCHITECTURE.md           the system on one page: topology diagram, trust/credential table, state machines,
                                tables, channels, clocks, mapping tables, "where the detail lives"
@@ -103,7 +103,11 @@ single message** — forks inherit the research and the conversation. Each promp
   test file names, verification commands);
 - "reply with a 3-line summary **and list every name you added beyond the canon**".
 
-While they run, the main thread writes `AGENTS.md`, the root `README.md`, and `docs/plans/README.md`.
+While they run, the main thread writes `AGENTS.md`, the root `README.md`, and `docs/plans/README.md`. Start
+`AGENTS.md` from [`AGENTS.template.md`](./AGENTS.template.md) in this skill's directory
+(`~/.claude/skills/deep-plan/AGENTS.template.md`). If the user has a template project with its own rules file, merge
+the two: their rules win, ours fill the gaps. Fill every `<placeholder>`, and delete the `(optional)` rules that don't
+apply. Then **renumber, and grep the phase docs for `rule [0-9]+`**: writers cite rules by number.
 
 ## Step 7 — Fold in mid-stream decisions
 
@@ -203,6 +207,9 @@ The index (`docs/plans/README.md`): one paragraph on what the thing is; a "where
 behind the order; status; and **decisions so far**.
 
 ## Rules worth putting in the project's `AGENTS.md`
+
+The full skeleton, with every section and rule written out, is [`AGENTS.template.md`](./AGENTS.template.md). The
+ones that matter most:
 
 - Tests drive the real thing (a booted server, a real protocol peer, a faithful fake of the third party) — no mocks of
   our own code.
