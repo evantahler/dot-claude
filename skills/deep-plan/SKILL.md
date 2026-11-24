@@ -147,7 +147,7 @@ Then, by grep and by reading:
 
 ## Step 9 — Ship as a docs-only draft PR
 
-Commit (signature per `docs/SIGNATURE.md`), push, open a **draft** PR with a short body: what the thing is, the doc
+Commit, push, open a **draft** PR with a short body: what the thing is, the doc
 list, "no code yet; Phase 1 halts for review". If the repository is empty and has no base branch, create one
 **without rewriting history**: an orphan empty `main` pushed as a new branch, then
 `git merge --allow-unrelated-histories main` into the feature branch and a normal push. Never force-push to make a
