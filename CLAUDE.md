@@ -20,7 +20,6 @@ This is Evan Tahler's global Claude Code configuration. It applies to all projec
 These files are included in every conversation:
 
 - @docs/PREFERENCES.md — Output formatting preferences (lists over prose, ASCII tables, terminal colors)
-- @docs/SIGNATURE.md — The agent signature: which surfaces get it, why harness footers don't replace it, placement, and the pre-send checkpoint
 
 ## Reference Files
 
